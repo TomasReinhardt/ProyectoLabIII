@@ -1,54 +1,69 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&display=swap" rel="stylesheet">        
-        <link rel="stylesheet" href="styles.css">
+      <title>Fake Store</title>
+
+      <!-- Bootstrap -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+      <!-- Estilos -->
+      <link rel="stylesheet" href="./assets/css/styles.css">
+
+      <!-- Animaciones -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+      <!-- Fuentes -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet"> 
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
     </head>
+
     <body>
-        <header>
-            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
-                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
-            </svg>
-            <h1>Correo</h1>
-        </header>
+      <section id="menu" class="position-absolute">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+              <button class="navbar-toggler w-100" type="button" data-bs-toggle="collapse" data-bs-target="#menuDesplegable" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon w-100 text-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-border-width" viewBox="0 0 16 16">
+                    <path d="M0 3.5A.5.5 0 0 1 .5 3h15a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-2zm0 5A.5.5 0 0 1 .5 8h15a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-1zm0 4a.5.5 0 0 1 .5-.5h15a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5z"/>
+                  </svg>
+                </span>
+              </button>
+              <div class="collapse navbar-collapse" id="menuDesplegable">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-around w-100">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" onclick="loadContent('home')">Inicio</a>
+                  </li>
+                  <span class="separador"></span>
+                  <li class="nav-item">
+                    <a class="nav-link" onclick="loadContent('products')">Productos</a>
+                  </li>
+                  <span class="separador"></span>
+                  <li class="nav-item" onclick="loadContent('mayorista')">
+                    <a class="nav-link" href="#">Mayorista</a>
+                  </li>
+                  <span class="separador"></span>
+                  <li class="nav-item" onclick="loadContent('revendedor')">
+                    <a class="nav-link" href="#">Revender</a>
+                  </li>
+                  <span class="separador"></span>
+                  <li class="nav-item" onclick="loadContent('trolley')">
+                    <a class="nav-link" href="#">Carrito</a>
+                  </li>
+               </ul>
+              </div>
+            </div>
+          </nav>
+      </section>
 
-        <main>
-            <form id="mailForm"> 
-                <div>
-                    <label for="from">De</label>
-                    <select name="from">
-                        <option>algo@algo.com</option>
-                        <option>otro@otro.com.ar</option>
-                        <option>basura@basura.com.ar</option>
-                        <option>correo@correo.com.ar</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="dest">Destinatario</label>
-                    <input type="text" name="dest" id="dest">
-                </div>
-                <div>
-                    <label for="asunto">Asunto</label>
-                    <input type="text" name="asunto" id="asunto">
-                </div>
-                <div>
-                    <label for="adj">Adjuntar archivo</label>
-                    <input type="file" name="adj" id="adj">
-                </div>
-                <div>
-                    <label for="msj">Mensaje</label>
-                    <textarea name="msj" id="msj" ></textarea>
-                </div>
-                <input type="submit" value="Enviar!">
-            </form>
-        </main>
+      <section id="content">
+        <!-- Se carga el contenido de la vista -->
+      </section>
 
-        <footer>
-            &copy; 2023 - Todos los derechos reservados
-        </footer>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+      <script src="./js/jquery-3.6.3.min.js"></script>
+      <script src="./js/index.js"></script>
     </body>
-
-    <script src="./index.js"></script>
-</html>
+</html> 

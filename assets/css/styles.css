@@ -1,0 +1,178 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #D4BBD0;
+  overflow: hidden;
+}
+body #menu {
+  border-radius: 10px;
+  background-color: #EDD9E4;
+  font-family: "Itim", cursive;
+  width: 98%;
+  z-index: 2;
+  top: 10px;
+}
+body #menu .navbar ul li {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 5vh;
+  border-radius: 1px;
+  transition: all 300ms;
+}
+body #menu .navbar ul li a {
+  width: 100%;
+  text-align: center;
+  color: #997994;
+  font-size: 25px;
+}
+body #menu .navbar ul li:hover {
+  background-color: #D4BBD0;
+}
+body #menu .navbar ul .separador {
+  width: 10px;
+  background-color: #D4BBD0;
+}
+body #menu .navbar .navbar-toggler-icon {
+  color: #997994;
+}
+body #menu .navbar-toggler:focus {
+  text-decoration: none;
+  outline: 0;
+  box-shadow: none;
+}
+body #content {
+  width: 98%;
+  height: 87.5vh;
+  margin-top: 11vh;
+}
+body #content #carouselHome {
+  border-radius: 10px;
+}
+body #content #carouselHome #titlePage {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body #content #carouselHome #titlePage h1 {
+  font-family: "Italianno", cursive;
+  font-size: 200px;
+  color: #997994;
+}
+body #content #carouselHome img {
+  height: 87.5vh;
+  border-radius: 10px;
+}
+body #content #products, body #content #mayorista, body #content #revendedor, body #content #trolley {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-image: url("../imgs/slide1.jpg");
+  background-size: 100% 100%;
+  height: 87.5vh;
+  border-radius: 10px;
+  overflow: hidden;
+}
+body #content #products {
+  background-image: url("../imgs/slide2.jpg");
+}
+body #content #products #filters {
+  width: 20%;
+  padding: 10px;
+}
+body #content #products #filters #filtersBox {
+  width: 100%;
+  height: 100%;
+  background-color: #D4BBD0;
+  border-radius: 10px;
+}
+body #content #products #productsList {
+  width: 80%;
+  padding: 10px;
+}
+body #content #products #productsList #productsBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 85vh;
+  padding: 10px;
+  border-radius: 10px;
+  border: 3px dashed #D4BBD0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+body #content #products #productsList #productsBox .productBox {
+  width: 220px;
+  height: 250px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+body #content #products #productsList #productsBox .productBox .product {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 220px;
+  height: 250px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #D4BBD0;
+  transition: all 300ms;
+}
+body #content #products #productsList #productsBox .productBox .product img {
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  transition: all 300ms;
+}
+body #content #products #productsList #productsBox .productBox .product h5 {
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  transition: all 300ms;
+}
+body #content #products #productsList #productsBox .productBox .product .price {
+  transition: all 300ms;
+}
+body #content #products #productsList #productsBox .productBox .product .infoProduct {
+  display: none;
+  height: 150px;
+  overflow: hidden;
+  transform: rotateY(180deg);
+  transition: all 300ms;
+}
+body #content #products #productsList #productsBox .productBox .product .addButton {
+  display: none;
+  width: 150px;
+  border-radius: 20px;
+  border: none;
+  background-color: #EDD9E4;
+  color: #997994;
+  transform: rotateY(180deg);
+  transition: all 300ms;
+}
+body #content #products #productsList #productsBox .productBox .product .addButton:hover {
+  color: #EDD9E4;
+  background-color: #997994;
+}
+body #content #products #productsList #productsBox .productBox:hover .product {
+  transform: rotateY(180deg);
+}
+body #content #products #productsList #productsBox .productBox:hover .product img, body #content #products #productsList #productsBox .productBox:hover .product h5, body #content #products #productsList #productsBox .productBox:hover .product .price {
+  display: none;
+}
+body #content #products #productsList #productsBox .productBox:hover .product .infoProduct, body #content #products #productsList #productsBox .productBox:hover .product .addButton {
+  display: block;
+}/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,200 @@
+* {
+    margin: 0;
+    padding: 0
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #D4BBD0;
+    overflow: hidden;
+    #menu {
+        border-radius: 10px;
+        background-color: #EDD9E4;
+        font-family: 'Itim', cursive;
+        width: 98%;
+        z-index: 2;
+        top: 10px;
+        .navbar {
+            ul {
+                li {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    height: 5vh;
+                    border-radius: 1px;
+                    transition: all 300ms;
+                    a {
+                        width: 100%;
+                        text-align: center;
+                        color: #997994;
+                        font-size: 25px;
+                    }
+                }
+                li:hover {
+                    background-color: #D4BBD0;
+                }
+                .separador {
+                    width: 10px;
+                    background-color: #D4BBD0;
+                }
+            }
+            .navbar-toggler-icon {
+                color: #997994;
+            }
+        }
+        .navbar-toggler:focus {
+            text-decoration: none;
+            outline: 0;
+            box-shadow: none;
+        }
+    }
+
+    #content {
+        width: 98%;
+        height: 87.5vh;
+        margin-top: 11vh;
+        // Estilos contenido pagina inicio
+        #carouselHome {
+            border-radius: 10px;
+            #titlePage {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;                
+                h1 {
+                    font-family: 'Italianno', cursive;
+                    font-size: 200px;
+                    color: #997994;
+                }
+            }
+            img {
+                height:87.5vh;
+                border-radius: 10px;
+            }
+        }
+
+        // Estilos base de las vistas
+        #products,#mayorista,#revendedor,#trolley {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            background-image: url('../imgs/slide1.jpg');
+            background-size: 100% 100%;
+            height: 87.5vh;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        // Estilos contenido pagina products
+        #products {
+            background-image: url('../imgs/slide2.jpg');
+            #filters {
+                width: 20%;
+                padding: 10px;
+                #filtersBox {
+                    width: 100%;
+                    height: 100%;
+                    background-color: #D4BBD0;
+                    border-radius: 10px;
+                }
+            }
+            #productsList {
+                width: 80%;
+                padding: 10px;
+                #productsBox {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-evenly;
+                    width: 100%;
+                    height: 85vh;
+                    padding: 10px;
+                    border-radius: 10px;
+                    border: 3px dashed #D4BBD0;
+                    overflow-y: scroll;
+                    overflow-x: hidden;
+
+                    .productBox {
+                        width: 220px;
+                        height: 250px;
+                        margin-bottom: 10px;
+                        border-radius: 10px;
+                        cursor: pointer;
+
+                        .product {
+                            display: flex;
+                            justify-content: center;
+                            flex-wrap: wrap;
+                            width: 220px;
+                            height: 250px;
+                            padding: 10px;
+                            border-radius: 10px;
+                            background-color: #D4BBD0;
+                            transition: all 300ms;
+    
+                            img {
+                                width: 150px;
+                                height: 150px;
+                                border-radius: 100%;
+                                transition: all 300ms;
+                            }
+    
+                            h5 {
+                                width: 100%;
+                                text-align: center;
+                                font-size: 14px;
+                                transition: all 300ms;
+                            }
+    
+                            .price {
+                                transition: all 300ms;
+                            }
+
+                            .infoProduct {
+                                display: none;
+                                height: 150px;
+                                overflow: hidden;
+                                transform: rotateY(180deg);
+                                transition: all 300ms;
+                            }
+
+                            .addButton {
+                                display: none;
+                                width: 150px;
+                                border-radius: 20px;
+                                border: none;
+                                background-color: #EDD9E4;
+                                color: #997994;
+                                transform: rotateY(180deg);
+                                transition: all 300ms;
+                            }
+
+                            .addButton:hover {
+                                color: #EDD9E4;
+                                background-color: #997994;
+                            }
+                        }
+    
+                    }
+                    
+                    .productBox:hover {
+                        .product {
+                            transform: rotateY(180deg);
+                            img,h5,.price {
+                                display: none;
+                            }
+                            .infoProduct,.addButton {
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
