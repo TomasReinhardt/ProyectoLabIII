@@ -43,7 +43,76 @@ body #menu .navbar ul .separador {
 body #menu .navbar .navbar-toggler-icon {
   color: #997994;
 }
+body #menu .navbar-toggler {
+  padding: 0px;
+}
 body #menu .navbar-toggler:focus {
+  text-decoration: none;
+  outline: 0;
+  box-shadow: none;
+}
+body #filters {
+  width: 100%;
+  font-family: "Itim", cursive;
+  padding: 10px;
+}
+body #filters .navbar {
+  background-color: #EDD9E4;
+  border-radius: 10px;
+  text-align: center;
+}
+body #filters .navbar .navbar-text {
+  color: #997994;
+  font-size: 24px;
+}
+body #filters .navbar ul {
+  height: 100%;
+}
+body #filters .navbar ul li select {
+  height: 100%;
+  height: 40px;
+  padding-left: 10px;
+  color: #997994;
+  background-color: #EDD9E4;
+  border: none;
+  font-size: 20px;
+  transition: all 300ms;
+}
+body #filters .navbar ul .separador {
+  width: 2px;
+  margin: 0 20px;
+  background-color: #D4BBD0;
+}
+body #filters .navbar form input {
+  height: 40px;
+  color: #997994;
+  background-color: #EDD9E4;
+  border-radius: 20px;
+  font-size: 20px;
+  border: 1px dashed #997994;
+  transition: all 300ms;
+}
+body #filters .navbar form input::-moz-placeholder {
+  color: #997994;
+}
+body #filters .navbar form input::placeholder {
+  color: #997994;
+}
+body #filters .navbar form input:focus {
+  outline: none;
+  box-shadow: none;
+  background-color: #997994;
+  color: #EDD9E4;
+  border: 1px solid #997994;
+}
+body #filters .navbar button {
+  width: 100%;
+}
+body #filters .navbar button .navbar-toggler-icon {
+  width: 100%;
+  color: #997994;
+}
+body #filters .navbar-toggler:focus {
   text-decoration: none;
   outline: 0;
   box-shadow: none;
@@ -84,21 +153,8 @@ body #content #products, body #content #mayorista, body #content #revendedor, bo
   border-radius: 10px;
   overflow: hidden;
 }
-body #content #products {
-  background-image: url("../imgs/slide2.jpg");
-}
-body #content #products #filters {
-  width: 20%;
-  padding: 10px;
-}
-body #content #products #filters #filtersBox {
-  width: 100%;
-  height: 100%;
-  background-color: #D4BBD0;
-  border-radius: 10px;
-}
 body #content #products #productsList {
-  width: 80%;
+  width: 100%;
   padding: 10px;
 }
 body #content #products #productsList #productsBox {
@@ -175,4 +231,88 @@ body #content #products #productsList #productsBox .productBox:hover .product im
 }
 body #content #products #productsList #productsBox .productBox:hover .product .infoProduct, body #content #products #productsList #productsBox .productBox:hover .product .addButton {
   display: block;
+}
+body #content #mayorista, body #content #revendedor {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  font-family: "Itim", cursive;
+}
+body #content #mayorista .textBox, body #content #revendedor .textBox {
+  width: 60%;
+  padding: 20px;
+}
+body #content #mayorista .textBox p, body #content #revendedor .textBox p {
+  font-size: 20px;
+  background-color: #D4BBD0;
+  border-radius: 20px;
+  padding: 10px;
+}
+body #content #mayorista .formBox, body #content #revendedor .formBox {
+  width: 40%;
+  padding: 20px;
+}
+body #content #mayorista .formBox form, body #content #revendedor .formBox form {
+  font-size: 20px;
+  background-color: #D4BBD0;
+  border-radius: 20px;
+  padding: 10px;
+}
+body #content #mayorista .formBox form div, body #content #revendedor .formBox form div {
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+}
+body #content #mayorista .formBox form div input, body #content #revendedor .formBox form div input {
+  height: 40px;
+  color: #997994;
+  background-color: #EDD9E4;
+  border-radius: 20px;
+  font-size: 20px;
+  border: 1px dashed #997994;
+  text-align: center;
+  transition: all 300ms;
+}
+body #content #mayorista .formBox form div input::-moz-placeholder, body #content #revendedor .formBox form div input::-moz-placeholder {
+  color: #997994;
+}
+body #content #mayorista .formBox form div input::placeholder, body #content #revendedor .formBox form div input::placeholder {
+  color: #997994;
+}
+body #content #mayorista .formBox form div input:focus, body #content #revendedor .formBox form div input:focus {
+  outline: none;
+  box-shadow: none;
+  background-color: #997994;
+  color: #EDD9E4;
+  border: 1px solid #997994;
+}
+body #content #mayorista .formBox form div input[type=number]::-webkit-inner-spin-button,
+body #content #mayorista .formBox form div input[type=number]::-webkit-outer-spin-button, body #content #revendedor .formBox form div input[type=number]::-webkit-inner-spin-button,
+body #content #revendedor .formBox form div input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+body #content #mayorista .formBox form div input[type=number], body #content #revendedor .formBox form div input[type=number] {
+  -moz-appearance: textfield;
+}
+body #content #mayorista .formBox form button, body #content #revendedor .formBox form button {
+  display: block;
+  width: 100px;
+  margin: 0 auto;
+  color: #997994;
+  font-size: 25px;
+  border: none;
+  background-color: #EDD9E4;
+  border-radius: 20px;
+  transition: all 300ms;
+}
+body #content #mayorista .formBox form button:hover, body #content #revendedor .formBox form button:hover {
+  background-color: #997994;
+  color: #EDD9E4;
+}
+body #content #mayorista .formBox form .titleFormDatos, body #content #revendedor .formBox form .titleFormDatos {
+  border-bottom: 2px dashed #EDD9E4;
+}
+body #content #mayorista .formBox form .titleFormDatos h4, body #content #revendedor .formBox form .titleFormDatos h4 {
+  font-size: 40px;
 }/*# sourceMappingURL=styles.css.map */

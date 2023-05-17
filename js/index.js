@@ -1,7 +1,8 @@
 let products = [];
+let categorys = [];
 
 window.onload = function() {
-    loadContent('products');
+    loadContent('mayorista');
 }
 
 function loadContent(page){
@@ -19,6 +20,7 @@ function loadContent(page){
 
         if(page=="products"){
             loadProducts();
+            loadCategorys();
         }
 
         setTimeout(()=>{
@@ -36,17 +38,33 @@ function loadProducts(){
 
                 for (let i = 0; i < products.length; i++) {
                     node = `
-                    <div class="productBox">
-                        <div class="product">
-                            <img src="${products[i].image}" alt="${products[i].title}">
-                            <h5><strong>${products[i].title}</strong></h3>
-                            <p class="price">$${products[i].price}</p>
-                            <p class="infoProduct"><i>${products[i].description}</i></p>
-                            <button class="addButton">Añadir</button>
+                        <div class="productBox">
+                            <div class="product">
+                                <img src="${products[i].image}" alt="${products[i].title}">
+                                <h5><strong>${products[i].title}</strong></h3>
+                                <p class="price">$${products[i].price}</p>
+                                <p class="infoProduct"><i>${products[i].description}</i></p>
+                                <button class="addButton">Añadir</button>
+                            </div>
                         </div>
-                    </div>
-                `
+                    `
                     contentDiv.append(node)
+                }
+            })
+}
+
+function loadCategorys(){
+    fetch('https://fakestoreapi.com/products/categories')
+            .then(res=>res.json())
+            .then(response=>{
+                categorys = response;
+                let categorysDiv =  $("#categorySelect");
+
+                for (let i=0; i< categorys.length; i++){
+                    node = `
+                        <option value="${categorys[i]}">${categorys[i]}</option>
+                    `
+                    categorysDiv.append(node);
                 }
             })
 }
