@@ -3,14 +3,8 @@ let categorys = [];
 let pageActual = "";
 
 window.onload = () => {
-    loadContent('home');
+    loadContent('mayorista');
 }
-
-$(document).keyup(()=> {
-    if(pageActual == "products"){
-        filterProducts()
-    }
-})
 
 function loadContent(page){
     let direction = './views/'+page+'.html';
@@ -86,7 +80,6 @@ function filterProducts(){
     auxProducts = products.filter(product => (product.title.toLowerCase().includes(name) && product.category.toLowerCase().includes(category)));
     let contentDiv = $('#productsBox');
     contentDiv.find(".productBox").remove();
-
     for (let i = 0; i < auxProducts.length; i++) {
         node = `
             <div class="productBox">
@@ -101,5 +94,9 @@ function filterProducts(){
         `
         contentDiv.append(node);
     }
+}
+
+function validateCampo() {
+
 }
 
