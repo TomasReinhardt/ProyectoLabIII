@@ -4,7 +4,7 @@ let pageActual = "";
 let formValid = false;
 
 window.onload = () => {
-    loadContent('trolley');
+    loadContent('home');
 
     if (!JSON.parse(localStorage.getItem("Trolley"))){
         trolley = []
