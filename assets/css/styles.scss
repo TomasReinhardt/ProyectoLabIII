@@ -142,6 +142,7 @@ body {
                 justify-content: center;
                 align-items: center;                
                 h1 {
+                    text-align: center;
                     font-family: 'Italianno', cursive;
                     font-size: 200px;
                     color: #997994;
@@ -269,9 +270,8 @@ body {
             font-family: 'Itim', cursive;
             overflow-y: scroll;
             overflow-x: hidden;
-            
+
             .textBox {
-                width: 60%;
                 padding: 20px;
                 p {
                     font-size: 20px;
@@ -281,7 +281,6 @@ body {
                 }
             }
             .formBox {
-                width: 40%;
                 padding: 20px;
                 form {
                     font-size: 20px;
@@ -337,6 +336,7 @@ body {
                     button:hover {
                         background-color: #997994;
                         color: #EDD9E4;
+                        box-shadow: none;
                     }
 
                     .titleFormDatos {
@@ -346,6 +346,102 @@ body {
                         }
                     }
 
+                }
+            }
+
+            .invalidCampo {
+                border: 3px solid lightcoral !important;
+            }
+
+            #messageError {
+                display: block;
+                width: 100%;
+                text-align: center;
+                color: lightcoral;
+            }
+        }
+
+        #trolley {
+            align-content: baseline;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            justify-content: center;
+
+            #buy {
+                position: fixed;
+                bottom: 20px;
+                background-color: transparent;
+                padding: 0px 30px;
+                border-radius: 20px;
+                border: 2px dashed rgb(64, 120, 64);
+                background-color: transparent;
+                color: rgb(64, 120, 64);
+                font-family: 'Italianno', cursive;
+                font-size: 30px;
+                transition: all 300ms;
+            }
+
+            #buy:hover {
+                border: 2px dashed lightgreen;
+                background-color: rgb(64, 120, 64);
+                color: lightgreen;
+            }
+
+            .productTrolleyBox {
+                width: 100%;
+                padding: 10px;
+                .productTrolley {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 100%;
+                    min-height: 100px;
+                    padding: 10px;
+                    margin: 0 auto;
+                    border-radius: 20px;
+                    overflow: hidden;
+                    background-color: #D4BBD0;
+
+                    .auxInfo {
+                        display: flex;
+                        flex-wrap: wrap;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        img,p,h5 {
+                            padding: 0px;
+                            color: #997994;
+                        }
+
+                        img {
+                            width: 80px;
+                            height: 80px;
+                            border-radius: 40px;
+                        }
+
+                        p {
+                            margin: 0px;
+                        }
+
+                        h5 {
+                            margin: 0px;
+                        }
+                    }
+
+                    button {
+                        padding: 10px;
+                        border-radius: 20px;
+                        border: 2px solid lightcoral;
+                        background-color: transparent;
+                        color: lightcoral;
+                        transition: all 300ms;
+                    }
+
+                    button:hover {
+                        background-color: lightcoral;
+                        color: white;
+                    }
                 }
             }
         }

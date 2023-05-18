@@ -1,31 +1,32 @@
-<div id="revendedor">
-    <section class="formBox">
-        <form>
+<div id="revendedor" class="flex-row">
+    <section class="formBox col ">
+        <form id="formData" onsubmit="saveData(event,formData)">
             <div class="mb-3 titleFormDatos">
                 <h4>Datos Personales</h4>
             </div>
             <div class="mb-3">
-              <input type="text" class="form-control" id="namePersonMayorista" placeholder="Nombre Completo">
+              <input type="text" class="form-control" id="namePerson" placeholder="Nombre Completo" onblur="validateCampo('namePerson')">
             </div>
             <div class="mb-3">
-                <input type="number" class="form-control" id="DNIPersonMayorista" placeholder="DNI">
+                <input type="number" class="form-control" id="DNIPerson" placeholder="DNI" onblur="validateCampo('DNIPerson')">
             </div>
             <div class="mb-3">
-              <input type="number" class="form-control" id="nameLocalMayorista" placeholder="C.U.I.T.">
+              <input type="number" class="form-control" id="CUIT" placeholder="C.U.I.T. (sin -)" onblur="validateCampo('CUIT')">
             </div>
             <div class="mb-3">
-                <input type="text" class="form-control" id="direccionLocalMayorista" placeholder="Dirección">
+                <input type="text" class="form-control" id="direccionLocal" placeholder="Dirección" onblur="validateCampo('direccionLocal')">
             </div>
             <div class="mb-3">
-                <input type="email" class="form-control" id="emailLocalMayorista" placeholder="Correo">
+                <input type="email" class="form-control" id="email" placeholder="Correo" onblur="validateCampo('email')">
               </div>
               <div class="mb-3">
-                  <input type="number" class="form-control" id="telLocalMayorista" placeholder="Telefono">
+                  <input type="number" class="form-control" id="tel" placeholder="Telefono" onblur="validateCampo('tel')">
               </div>
+            <span id="messageError" class="mb-3"></span>
             <button type="submit" class="btn btn-primary">Enviar</button>
-          </form>
+        </form>
     </section>
-    <section class="textBox">
+    <section class="textBox col-md-8 col-12 order-md-last order-first">
         <p>
             ¡Conviértete en revendedor y maximiza tus ganancias con nuestros productos de alta calidad! 📈💰
             <br>

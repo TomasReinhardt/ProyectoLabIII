@@ -136,6 +136,7 @@ body #content #carouselHome #titlePage {
   align-items: center;
 }
 body #content #carouselHome #titlePage h1 {
+  text-align: center;
   font-family: "Italianno", cursive;
   font-size: 200px;
   color: #997994;
@@ -242,7 +243,6 @@ body #content #mayorista, body #content #revendedor {
   overflow-x: hidden;
 }
 body #content #mayorista .textBox, body #content #revendedor .textBox {
-  width: 60%;
   padding: 20px;
 }
 body #content #mayorista .textBox p, body #content #revendedor .textBox p {
@@ -252,7 +252,6 @@ body #content #mayorista .textBox p, body #content #revendedor .textBox p {
   padding: 10px;
 }
 body #content #mayorista .formBox, body #content #revendedor .formBox {
-  width: 40%;
   padding: 20px;
 }
 body #content #mayorista .formBox form, body #content #revendedor .formBox form {
@@ -312,10 +311,94 @@ body #content #mayorista .formBox form button, body #content #revendedor .formBo
 body #content #mayorista .formBox form button:hover, body #content #revendedor .formBox form button:hover {
   background-color: #997994;
   color: #EDD9E4;
+  box-shadow: none;
 }
 body #content #mayorista .formBox form .titleFormDatos, body #content #revendedor .formBox form .titleFormDatos {
   border-bottom: 2px dashed #EDD9E4;
 }
 body #content #mayorista .formBox form .titleFormDatos h4, body #content #revendedor .formBox form .titleFormDatos h4 {
   font-size: 40px;
+}
+body #content #mayorista .invalidCampo, body #content #revendedor .invalidCampo {
+  border: 3px solid lightcoral !important;
+}
+body #content #mayorista #messageError, body #content #revendedor #messageError {
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: lightcoral;
+}
+body #content #trolley {
+  align-content: baseline;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  justify-content: center;
+}
+body #content #trolley #buy {
+  position: fixed;
+  bottom: 20px;
+  background-color: transparent;
+  padding: 0px 30px;
+  border-radius: 20px;
+  border: 2px dashed rgb(64, 120, 64);
+  background-color: transparent;
+  color: rgb(64, 120, 64);
+  font-family: "Italianno", cursive;
+  font-size: 30px;
+  transition: all 300ms;
+}
+body #content #trolley #buy:hover {
+  border: 2px dashed lightgreen;
+  background-color: rgb(64, 120, 64);
+  color: lightgreen;
+}
+body #content #trolley .productTrolleyBox {
+  width: 100%;
+  padding: 10px;
+}
+body #content #trolley .productTrolleyBox .productTrolley {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  min-height: 100px;
+  padding: 10px;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #D4BBD0;
+}
+body #content #trolley .productTrolleyBox .productTrolley .auxInfo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+body #content #trolley .productTrolleyBox .productTrolley .auxInfo img, body #content #trolley .productTrolleyBox .productTrolley .auxInfo p, body #content #trolley .productTrolleyBox .productTrolley .auxInfo h5 {
+  padding: 0px;
+  color: #997994;
+}
+body #content #trolley .productTrolleyBox .productTrolley .auxInfo img {
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
+}
+body #content #trolley .productTrolleyBox .productTrolley .auxInfo p {
+  margin: 0px;
+}
+body #content #trolley .productTrolleyBox .productTrolley .auxInfo h5 {
+  margin: 0px;
+}
+body #content #trolley .productTrolleyBox .productTrolley button {
+  padding: 10px;
+  border-radius: 20px;
+  border: 2px solid lightcoral;
+  background-color: transparent;
+  color: lightcoral;
+  transition: all 300ms;
+}
+body #content #trolley .productTrolleyBox .productTrolley button:hover {
+  background-color: lightcoral;
+  color: white;
 }/*# sourceMappingURL=styles.css.map */
