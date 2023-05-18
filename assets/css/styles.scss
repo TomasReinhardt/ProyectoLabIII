@@ -26,6 +26,7 @@ body {
                     height: 5vh;
                     border-radius: 1px;
                     transition: all 300ms;
+                    cursor: pointer;
                     a {
                         width: 100%;
                         text-align: center;
@@ -88,26 +89,24 @@ body {
                 }
             }
 
-            form {
-                input {
-                    height: 40px;
-                    color: #997994;
-                    background-color: #EDD9E4;
-                    border-radius: 20px;
-                    font-size: 20px;
-                    border: 1px dashed #997994;
-                    transition: all 300ms;
-                }
-                input::placeholder {
-                    color: #997994;
-                }
-                input:focus {
-                    outline: none;
-                    box-shadow: none;
-                    background-color: #997994;
-                    color: #EDD9E4;
-                    border: 1px solid #997994;
-                }
+            input {
+                height: 40px;
+                color: #997994;
+                background-color: #EDD9E4;
+                border-radius: 20px;
+                font-size: 20px;
+                border: 1px dashed #997994;
+                transition: all 300ms;
+            }
+            input::placeholder {
+                color: #997994;
+            }
+            input:focus {
+                outline: none;
+                box-shadow: none;
+                background-color: #997994;
+                color: #EDD9E4;
+                border: 1px solid #997994;
             }
 
             button {
@@ -268,7 +267,9 @@ body {
             flex-wrap: wrap;
             justify-content: space-evenly;
             font-family: 'Itim', cursive;
-
+            overflow-y: scroll;
+            overflow-x: hidden;
+            
             .textBox {
                 width: 60%;
                 padding: 20px;

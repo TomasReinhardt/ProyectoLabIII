@@ -1,9 +1,16 @@
 let products = [];
 let categorys = [];
+let pageActual = "";
 
-window.onload = function() {
-    loadContent('mayorista');
+window.onload = () => {
+    loadContent('home');
 }
+
+$(document).keyup(()=> {
+    if(pageActual == "products"){
+        filterProducts()
+    }
+})
 
 function loadContent(page){
     let direction = './views/'+page+'.html';
@@ -17,8 +24,8 @@ function loadContent(page){
         .then(content => {
             contentDiv.html(content);
         });
-
-        if(page=="products"){
+        
+        if(page == "products"){
             loadProducts();
             loadCategorys();
         }
@@ -27,13 +34,15 @@ function loadContent(page){
             contentDiv.fadeIn();
         },200)
     },300)
+
+    pageActual = page;
 }
 
 function loadProducts(){
     fetch('https://fakestoreapi.com/products')
             .then(res=>res.json())
             .then(response=>{
-                products = response;
+                products = response
                 let contentDiv = $('#productsBox');
 
                 for (let i = 0; i < products.length; i++) {
@@ -48,8 +57,10 @@ function loadProducts(){
                             </div>
                         </div>
                     `
-                    contentDiv.append(node)
+                    contentDiv.append(node);
                 }
+
+
             })
 }
 
@@ -62,9 +73,33 @@ function loadCategorys(){
 
                 for (let i=0; i< categorys.length; i++){
                     node = `
-                        <option value="${categorys[i]}">${categorys[i]}</option>
+                        <option value="${categorys[i]}" onclick="filterProducts()">${categorys[i]}</option>
                     `
                     categorysDiv.append(node);
                 }
             })
 }
+
+function filterProducts(){
+    let category = $("#categorySelect").val().toLowerCase();
+    let name = $("#searchName").val().toLowerCase();
+    auxProducts = products.filter(product => (product.title.toLowerCase().includes(name) && product.category.toLowerCase().includes(category)));
+    let contentDiv = $('#productsBox');
+    contentDiv.find(".productBox").remove();
+
+    for (let i = 0; i < auxProducts.length; i++) {
+        node = `
+            <div class="productBox">
+                <div class="product">
+                    <img src="${auxProducts[i].image}" alt="${auxProducts[i].title}">
+                    <h5><strong>${auxProducts[i].title}</strong></h3>
+                    <p class="price">$${auxProducts[i].price}</p>
+                    <p class="infoProduct"><i>${auxProducts[i].description}</i></p>
+                    <button class="addButton">Añadir</button>
+                </div>
+            </div>
+        `
+        contentDiv.append(node);
+    }
+}
+
